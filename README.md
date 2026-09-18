@@ -1,6 +1,6 @@
 #  Mean and variance of a discrete  distribution
-
-
+# NAME: AANKARSH
+# REG.NO: 212223233001
 # Aim : 
 
 To find mean and variance of arrival of objects from the feeder using probability distribution
@@ -48,18 +48,54 @@ It shows the distance of a random variable from its mean. It is calcualted as
 ![image](https://user-images.githubusercontent.com/103921593/229993174-5b67e57e-3e01-4ac4-9f83-410a932b22bf.png)
 
 # Program :
-importnumpyas np n= int(input("Enterthevalueofn : ")) print("Valueof n =", n) InputVal= {} fori inrange(1, n+1): val= int(input(f"Enterthe valueno{i} :")) try: InputVal[val]+=1 except: InputVal[val]= 1 print(f"{i} ValuesCollectedSuccessfully") mean=0 forkey,valin InputVal.items(): mean+= key*(val/n) print(f"Mean= {mean:.3f}") ex2= 0 forkey,valin InputVal.items(): ex2+= ((key**2) * val/n) var= ex2-mean**2 print(f"Variance :{var:.3f}") frommathimportsqrt sdtDeviation= sqrt(var) print(f"Standard Deviation={sdtDeviation:.3f}")
+
+DEVELOPED:PRANAV S
+
+
+REGISTER NO:212224040242
+```
+import numpy as np
+
+# Read input values
+L = [int(i) for i in input().split()]
+N = len(L)
+M = max(L)
+x = []
+f = []
+
+# Calculate frequencies
+for i in range(M + 1):
+    c = 0
+    for j in range(N):
+        if L[j] == i:
+            c = c + 1
+    f.append(c)
+    x.append(i)
+
+# Calculate statistics
+sf = np.sum(f)
+p = []
+for i in range(M + 1):
+    p.append(f[i] / sf)
+
+mean = np.inner(x, p)
+Ex2 = np.inner(np.square(x), p)
+var = Ex2 - mean**2
+sd = np.sqrt(var)
+
+# Print results
+print(f"The Mean arrival rate is {mean:.3f} ")
+print(f"The Variance of arrival from feeder is {var:.3f}")
+print(f"The Standard deviation of arrival from feeder is {sd:.3f}")
+
+
+
+```
 
 
 # Output : 
-Enter the value of n : 10
-value of n = 10
+<img width="1062" height="95" alt="image" src="https://github.com/user-attachments/assets/6c7c93f6-5781-444d-aaeb-ba87b3e196cd" />
 
-10 Value collected successfully
-
-Mean = 5.500
-variance : 8.250
-Standard Deviation = 2.872
 
 # Results :
 The mean and variance of arrivals of objects from feeder using probability distribution are calculated.
