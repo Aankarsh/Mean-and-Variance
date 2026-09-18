@@ -1,4 +1,4 @@
-#  Mean and variance of a discrete  distribution
+#  EX : 1 Mean and variance of a discrete  distribution
 # NAME: AANKARSH
 # REG.NO: 212223233001
 # Aim : 
